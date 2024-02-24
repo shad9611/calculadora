@@ -1,4 +1,4 @@
-const pantalla =document.querySelector(".screen");
+const pantalla = document.querySelector(".screen");
 const botones = document.querySelectorAll(".btn");
 
 botones.forEach(boton => {
@@ -24,6 +24,9 @@ botones.forEach(boton => {
             } catch {
                 pantalla.textContent ="Syntax Error";
             }
+            return;
+        }
+        if(pantalla.textContent.length >= 13) {
             return;
         }
 
