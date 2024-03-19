@@ -1,5 +1,6 @@
 const pantalla = document.querySelector(".screen");
 const botones = document.querySelectorAll(".btn");
+const noRepeatIcon = document.querySelectorAll('.operation-icons')
 
 botones.forEach(boton => {
     boton.addEventListener("click", () =>{
@@ -26,7 +27,7 @@ botones.forEach(boton => {
             }
             return;
         }
-        if(pantalla.textContent.length >= 13) {
+        if (pantalla.textContent.length >= 13 || (pantalla.textContent === "0" && isNaN(parseInt(botonApretado)))) {
             return;
         }
 
@@ -35,6 +36,12 @@ botones.forEach(boton => {
         } else {
             pantalla.textContent += botonApretado;
         }
-
         })
+
 })
+
+noRepeatIcon.forEach(icon => {
+    icon.addEventListener("click", () =>{
+        //TODO
+    })
+});
